@@ -69,8 +69,6 @@ export class App extends Component {
     this.setState({ filter: e.target.value });
   };
 
- 
-
   render() {
     return (
       <WrapperContent>
