@@ -68,6 +68,7 @@ export class App extends Component {
   hadleFilterChange = e => {
     this.setState({ filter: e.target.value });
   };
+  
 
   render() {
     return (
