@@ -8,28 +8,26 @@ import Notiflix from 'notiflix';
 
 export class App extends Component {
   state = {
-    contacts: [
-    ],
+    contacts: [],
     filter: '',
   };
 
   componentDidMount() {
     const contactsLS = JSON.parse(localStorage.getItem('contacts'));
     if (contactsLS) {
-      this.setState({contacts: contactsLS});
+      this.setState({ contacts: contactsLS });
     }
-  };
+  }
 
   componentDidUpdate(_, prevState) {
     const { contacts } = this.state;
     if (prevState.contacts !== contacts) {
       localStorage.setItem('contacts', JSON.stringify(contacts));
-    }  
-}
-
+    }
+  }
 
   creatContact = ({ name, number }) => {
-        const contact = {
+    const contact = {
       id: nanoid(),
       name,
       number,
@@ -68,7 +66,7 @@ export class App extends Component {
   hadleFilterChange = e => {
     this.setState({ filter: e.target.value });
   };
-  
+
   render() {
     return (
       <WrapperContent>
